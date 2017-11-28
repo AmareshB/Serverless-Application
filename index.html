@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+ 
+
+Artist: <input type="text" ng-model="artist"><br>
+Song title: <input type="text" ng-model="songtitle"><br>
+<br>
+
+<br>
+<input type="button" name="Insert" ng-click="putData()" value="Insert">
+<br>
+<h5 >
+	response for insert click : {{insertedData}}
+</h5>
+<br>
+Artist: <input type="text" ng-model="selectArtist"><br>
+<input type="button" name="Query" ng-click="queryData()" value="Query">
+<input type="button" name="Get Data" ng-click="getData()" value="Get Data">
+<h5 >
+	{{tableData}}
+</h5>
+</div>
+
+<script type="text/javascript" src="myController.js"></script>
+</body>
+</html>
