@@ -3,6 +3,7 @@ app.controller('myCtrl', function($scope, $http) {
     $scope.artist = "";
     $scope.songtitle = "";
     $scope.tableData = "";
+    $scope.selectArtist = "";
     $scope.getData = function() {
         //alert("HI " + $scope.firstName +" "+ $scope.lastName);
         $scope.tableData = "";
@@ -21,5 +22,15 @@ app.controller('myCtrl', function($scope, $http) {
                 $scope.insertedData = response.data;
                 console.log(response.data);
             });
+    };
+    $scope.queryData = function() {
+         $scope.tableData = "";
+        $http.post(" https://9tb9iunyvi.execute-api.us-east-2.amazonaws.com/dev/querymusictable",{
+             artist: $scope.selectArtist,
+        }).then(function(response){
+             $scope.tableData = response.data;
+            console.log(response.data);
+        });
     }
+
 });
